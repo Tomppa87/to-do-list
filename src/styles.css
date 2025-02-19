@@ -1,0 +1,64 @@
+@import url(https://fonts.bunny.net/css?family=abril-fatface:400|alkatra:400|braah-one:400);
+/*
+font-family: 'Abril Fatface', display;
+font-family: 'Alkatra', display;
+font-family: 'Braah One', sans-serif;
+*/
+
+:root {
+    font-family: 'Alkatra';
+}
+#container {
+    display: grid;
+    grid-template-columns: minmax(100px, 300px) 1fr;
+    grid-template-rows: minmax(100px, 150px) 1fr;
+}
+
+#header {
+    font-family: 'Braah One', sans-serif;
+    background-color: aqua;
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#toDoLists,
+.newList {
+    font-size: 1.2rem;
+}
+ul {
+    list-style: none;
+    padding: 15px;    
+}
+ul>* {
+    border-bottom: 1px solid;
+}
+#contentCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding-top: 15px;
+    gap: 15px;    
+}
+#contentCards>div:hover {
+    background-color: beige;
+}
+
+#contentCards > * {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 15px;
+}
+.newList{
+    background-color: white;
+    border: 0;
+    font-family: 'Alkatra';
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+}
+.newListBtn{
+    height: 1rem;
+    padding-left: 10px;
+}
