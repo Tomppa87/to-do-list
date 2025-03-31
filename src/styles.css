@@ -81,3 +81,9 @@ ul>* {
     border: 1px solid black;
     border-radius: 10px;
 }
+#add_btn:hover {
+    background-color: beige;
+}
+.taskListOption:hover {
+    background-color: beige;
+}

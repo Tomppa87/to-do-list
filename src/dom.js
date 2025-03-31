@@ -98,6 +98,7 @@ export function updateListsDOM() {
     myTasks.innerHTML = "My Tasks"
     for (let i = 0; i < taskLists.length; i++) {        
         const task = document.createElement("li")
+        task.classList.add("taskListOption")
         task.innerHTML = taskLists[i];
         toDoLists.appendChild(task)
     }
@@ -159,11 +160,13 @@ newTaskBtn.addEventListener("click", (e) => {
     contentDomUpdate()
     dialog.close();
 })
-/*
-export const newTaskBtn = document.getElementById("newTaskBtn");
-export const newTaskForm = document.getElementById("newTaskForm");
-newTaskForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(newTaskForm.children);
-    //createTask()
+const newList = document.getElementById("newList")
+const dialogList = document.getElementById("dialogFormLists")
+newList.addEventListener("click", () => {
+    dropDownPopulate();
+    dialogList.showModal();
+})
+/*cancelTaskBtn.addEventListener("click", () => {
+    dropDownEmpty();
+    dialog.close();
 })*/

@@ -10,8 +10,16 @@
         <div id="header">To Do Or Not To Do</div>
         <div id="navBar">
             <ul id="editLists">
-                <button class="newList" type="button">
+                <button id = "newList" class="newList" type="button">
                     Create New List
+                    <dialog id="dialogFormLists">
+                        <form id="newListForm" class="hide form newList" method="dialog">
+                            <p>
+                                <label for="titleList">Task</label>
+                                <input type="text" name="task_title" id="titleList">
+                            </p>
+                        </form>
+                    </dialog>
                     <img class="newListBtn btn" src="./Images/plusSquare.svg" alt="">
                 </button>  
             </ul>
