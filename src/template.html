@@ -9,23 +9,72 @@
     <div id="container">
         <div id="header">To Do Or Not To Do</div>
         <div id="navBar">
-            <ul id="toDoLists">
+            <ul id="editLists">
                 <button class="newList" type="button">
                     Create New List
                     <img class="newListBtn btn" src="./Images/plusSquare.svg" alt="">
-                </button>                
-                <li>My Tasks</li>
-                <li>My Favourite Movies</li>
-                <li>Dream Holidays</li>
+                </button>  
+            </ul>
+            
+            <ul id="toDoLists">
+                
             </ul>
         </div>
         <div id="content">
             <div id="content_Head">
-
+                <div id="addNew">
+                    New To-Do-Task
+                    <input id="add_btn" type="image" src="./Images/plus-thick.svg" alt="">
+                    <dialog id="dialogFormTask">
+                        <form id="newTaskForm" class="hide form newTask" method="dialog">
+                            <p>
+                                <label for="title">Task</label>
+                                <input type="text" name="task_title" id="title">
+                            </p>
+                            <p>
+                                <label for="description">Description</label>
+                                <input type="text" name="description" id="description">
+                            </p>
+                            <p>
+                                <label for="dueDate">Due Date</label>
+                                <input type="date" name="dueDate" id="dueDate">
+                            </p>
+                            <p>
+                                <fieldset>
+                                   <legend>Priority</legend> 
+                                   <div>
+                                    <input type="radio" name="radio" id="priorityHigh">
+                                    <label for="priorityHigh">High</label>
+                                   </div>
+                                   <div>
+                                    <input type="radio" name="radio" id="priorityMedium">
+                                    <label for="priorityMedium">Medium</label>
+                                   </div>
+                                   <div>
+                                    <input type="radio" name="radio" id="priorityLow">
+                                    <label for="priorityLow">Low</label>
+                                   </div>                               
+                                </fieldset>                            
+                            </p>
+                            <p>
+                                <label for="to_do_list">To-Do-List</label>
+                                <select name="to-do-list" id="to_do_list">
+                                </select>
+                            </p>
+                            <p>
+                                <button id="newTaskBtn" type="submit">Create New Task</button>
+                                <button id="cancelTaskBtn" type="reset">Cancel</button>
+                            </p>
+                           
+                        </form>
+                    </dialog>
+                    
+                </div>
             </div>
             <div id="contentCards">
 
             </div>
+            
         </div>
     </div>
 </body>

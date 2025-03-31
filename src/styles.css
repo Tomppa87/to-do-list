@@ -48,6 +48,7 @@ ul>* {
     flex-direction: column;
     border: 1px solid;
     padding: 15px;
+    border-radius: 10px;
 }
 .newList{
     background-color: white;
@@ -61,4 +62,22 @@ ul>* {
 .newListBtn{
     height: 1rem;
     padding-left: 10px;
+}
+/*.index {
+    display: none;
+}*/
+#addNew {
+    display: flex;
+    font-size: 0.7rem;
+    
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+#add_btn {
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
