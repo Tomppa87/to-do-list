@@ -90,7 +90,7 @@ export function contentDomUpdate(filter) {
     }
     
 }
-export function updateLists() {
+export function updateListsDOM() {
     while (toDoLists.firstChild) {
         toDoLists.removeChild(toDoLists.firstChild);
     }
@@ -159,3 +159,11 @@ newTaskBtn.addEventListener("click", (e) => {
     contentDomUpdate()
     dialog.close();
 })
+/*
+export const newTaskBtn = document.getElementById("newTaskBtn");
+export const newTaskForm = document.getElementById("newTaskForm");
+newTaskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(newTaskForm.children);
+    //createTask()
+})*/
