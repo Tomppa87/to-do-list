@@ -87,3 +87,7 @@ ul>* {
 .taskListOption:hover {
     background-color: beige;
 }
+#newListForm {
+    display: flex;
+    flex-direction: column;
+}

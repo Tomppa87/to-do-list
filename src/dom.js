@@ -163,10 +163,10 @@ newTaskBtn.addEventListener("click", (e) => {
 const newList = document.getElementById("newList")
 const dialogList = document.getElementById("dialogFormLists")
 newList.addEventListener("click", () => {
-    dropDownPopulate();
+    
     dialogList.showModal();
 })
-/*cancelTaskBtn.addEventListener("click", () => {
-    dropDownEmpty();
-    dialog.close();
-})*/
+cancelListBtn.addEventListener("click", () => {
+    
+    dialogList.close();
+})
