@@ -35,6 +35,7 @@ export let completedTasks = [];
 
 export function completeTask(task) {
     completedTasks.push(task)
+    task.listName = "Completed Tasks"
     taskArray.splice(task.index,1);  
     populateStorage();  
 }
@@ -99,11 +100,8 @@ export function getFromStorage() {
     if (!completedArrayToParse) {
         completedTasks = []
     } else {
-        completedTasks = completedArrayParsed
-    }
-    
-    
-    
+        completedTasks = completedArrayParsed;
+    }        
 }
 
 

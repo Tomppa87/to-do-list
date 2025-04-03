@@ -93,14 +93,14 @@ export function contentDomUpdate(listFilter) {
             console.log(index)
             removeTask(index)
             
-        })
-        
+        })        
         completeBtn.addEventListener("click", (e) => {
         let index = e.target.parentElement.parentElement.querySelector("span.index").innerHTML
         completeTask(taskArray[index])
         removeTask(index)
         console.log(completedTasks)
         })
+
         cardBtns.appendChild(editBtn); 
         cardBtns.appendChild(completeBtn);
         cardBtns.appendChild(removeBtn); 
@@ -123,6 +123,11 @@ export function updateListsDOM() {
     }
 }
 toDoLists.addEventListener("click", function(e) {
+    listFilter = e.target.innerHTML
+    contentDomUpdate(listFilter)
+})
+let completedTasksBtn = document.getElementById("completedTasksBtn");
+completedTasksBtn.addEventListener("click", function(e) {
     listFilter = e.target.innerHTML
     contentDomUpdate(listFilter)
 })
