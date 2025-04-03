@@ -9,25 +9,24 @@
     <div id="container">
         <div id="header">To Do Or Not To Do</div>
         <div id="navBar">
-            <ul id="editLists">
-                <div id = "newList" class="newList">
-                Create New List
-                <dialog id="dialogFormLists">
-                    <form id="newListForm" class="hide form newListForm" method="dialog">
+            <div id="createListBtn">
+                
+                    <dialog id="newListDialog">
                         <legend>Add new list</legend>
                         <p>                                
                             <label for="titleList">List name</label>
                             <input type="text" name="task_title" id="titleList">
                         </p>
-                        <p>
-                            <button id="newListBtn" type="submit">Create New List</button>
-                            <button id="cancelListBtn" type="reset">Cancel</button>
-                        </p>
-                    </form>
-                </dialog>
+                        <button id="newListBtn" type="submit">Create New List</button>
+                        <button id="cancelListBtn" type="reset">Cancel</button>
+                    </dialog>
+            </div>
+            
+                <div id = "newList" class="newList">
+                    Create New List
                     <img class="newListBtn btn" src="./Images/plusSquare.svg" alt="">
                 </div>  
-            </ul>
+            
             <ul id="toDoLists">
             </ul>
         </div>

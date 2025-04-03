@@ -50,7 +50,7 @@ ul>* {
     padding: 15px;
     border-radius: 10px;
 }
-/*.newList{
+.newList{
     background-color: white;
     border: 0;
     font-family: 'Alkatra';
@@ -58,7 +58,8 @@ ul>* {
     display: flex;
     justify-content: center;
     align-items:baseline;
-}*/
+}
+
 .newListBtn{
     height: 1rem;
     padding-left: 10px;
@@ -81,13 +82,10 @@ ul>* {
     border: 1px solid black;
     border-radius: 10px;
 }
-#add_btn:hover {
+#add_btn:hover,
+.newList:hover {
     background-color: beige;
 }
 .taskListOption:hover {
     background-color: beige;
 }
-/*#newListForm {
-    display: flex;
-    flex-direction: column;
-}*/

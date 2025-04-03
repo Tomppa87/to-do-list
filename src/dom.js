@@ -156,7 +156,7 @@ function getRadioButtonValue() {
     }
 }
 
-
+let newTaskBtn = document.getElementById("newTaskBtn")
 newTaskBtn.addEventListener("click", (e) => {
     e.preventDefault();
     let newTaskTitle = document.getElementById("title").value
@@ -169,15 +169,15 @@ newTaskBtn.addEventListener("click", (e) => {
     dialog.close();
 })
 const newList = document.getElementById("newList")
-const dialogList = document.getElementById("dialogFormLists")
+const dialogNewList = document.getElementById("newListDialog")
 const cancelListBtn = document.getElementById("cancelListBtn")
 const confirmNewList = document.getElementById("newListBtn")
 newList.addEventListener("click", () => {    
-    dialogList.showModal();
+    dialogNewList.showModal();
 })
 cancelListBtn.addEventListener("click", () => {    
-    console.log("Byr")
-    dialogList.close();
+    console.log("Bye");
+    dialogNewList.close();
 })
 confirmNewList.addEventListener("click", (e) => {
     e.preventDefault(); 
@@ -187,5 +187,5 @@ confirmNewList.addEventListener("click", (e) => {
     console.log(taskLists) 
     contentDomUpdate()
     updateListsDOM();
-    dialogList.close();
+    dialogNewList.close();
 })
