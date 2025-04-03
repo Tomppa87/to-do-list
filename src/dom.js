@@ -5,7 +5,7 @@ export const add_btn = document.getElementById("add_btn");
 export const cancelTaskBtn = document.getElementById("cancelTaskBtn");
  
 
-import { taskArray } from "./myTasks";
+import { completedTasks, taskArray } from "./myTasks";
 import { taskLists } from "./myTasks";
 //import { removeTask } from "./index";
 import { indexTask } from "./myTasks";
@@ -13,12 +13,13 @@ import { createTask } from "./myTasks";
 import { createNewList } from "./myTasks";
 import { populateStorage } from "./myTasks"
 import { getFromStorage } from "./myTasks"
+import { completeTask } from "./myTasks"
+
 
 function removeTask(index) {
     taskArray.splice(index,1);  
     populateStorage();  
     getFromStorage();
-    
     contentDomUpdate(listFilter);
 };
 
@@ -84,6 +85,7 @@ export function contentDomUpdate(listFilter) {
         editBtn.innerHTML = "Edit"
         let completeBtn = document.createElement("button");
         completeBtn.innerHTML = "Complete"
+        completeBtn.id = "completeBtn";
         let removeBtn = document.createElement("button") 
         removeBtn.innerHTML = "Delete";
         removeBtn.addEventListener("click", function(e) {
@@ -91,6 +93,13 @@ export function contentDomUpdate(listFilter) {
             console.log(index)
             removeTask(index)
             
+        })
+        
+        completeBtn.addEventListener("click", (e) => {
+        let index = e.target.parentElement.parentElement.querySelector("span.index").innerHTML
+        completeTask(taskArray[index])
+        removeTask(index)
+        console.log(completedTasks)
         })
         cardBtns.appendChild(editBtn); 
         cardBtns.appendChild(completeBtn);

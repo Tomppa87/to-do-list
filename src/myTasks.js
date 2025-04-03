@@ -31,6 +31,13 @@ export function createTask(title, description, dueDate, priority,
 }
 
 export let taskLists = [];
+export let completedTasks = [];
+
+export function completeTask(task) {
+    completedTasks.push(task)
+    taskArray.splice(task.index,1);  
+    populateStorage();  
+}
 
 export function createNewList(listName) {
     if (taskLists.includes(listName)) {
@@ -59,8 +66,11 @@ export function populateStorage() {
     let storageTaskArrayJSON = JSON.stringify(storageTaskArray);
     let storageListArray = taskLists;
     let storageListArrayJSON = JSON.stringify(storageListArray);
+    let storageCompletedArray = completedTasks;
+    let storageCompletedArrayJSON = JSON.stringify(storageCompletedArray);
     localStorage.setItem("tasks", storageTaskArrayJSON)
     localStorage.setItem("lists", storageListArrayJSON)
+    localStorage.setItem("completed", storageCompletedArrayJSON)
 }
 
 export function getFromStorage() {
@@ -68,6 +78,8 @@ export function getFromStorage() {
     let taskArrayParsed = JSON.parse(taskArrayToParse)    
     let listArrayToParse = localStorage.getItem("lists")    
     let listArrayParsed = JSON.parse(listArrayToParse)
+    let completedArrayToParse = localStorage.getItem("completed")
+    let completedArrayParsed = JSON.parse(completedArrayToParse)
     if (!taskArrayToParse && !listArrayToParse) {
         taskArray = [];
         taskLists = [];
@@ -83,6 +95,11 @@ export function getFromStorage() {
     else {
         taskArray = taskArrayParsed;
         taskLists = listArrayParsed;
+    }
+    if (!completedArrayToParse) {
+        completedTasks = []
+    } else {
+        completedTasks = completedArrayParsed
     }
     
     
