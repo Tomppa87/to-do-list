@@ -12,10 +12,13 @@ import { indexTask } from "./myTasks";
 import { createTask } from "./myTasks";
 import { createNewList } from "./myTasks";
 import { populateStorage } from "./myTasks"
+import { getFromStorage } from "./myTasks"
 
 function removeTask(index) {
     taskArray.splice(index,1);  
     populateStorage();  
+    getFromStorage();
+    
     contentDomUpdate(listFilter);
 };
 

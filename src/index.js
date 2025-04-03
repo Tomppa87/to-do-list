@@ -18,23 +18,9 @@ import { getFromStorage } from "./myTasks"
 
 getFromStorage()
 
-createTask("School", "Finish homework", "09.04.2025", "High", "My Tasks");
-createTask("Moon", "Moon", "tomorrow", "low", "My Favourite Movies");
-createTask("Buy clothes", "Need new winter clothes", "01.03.2025", "medium", "Home")
-createTask("Japan", "Kyoto", "31.07.2026", "medium", "Dream Holidays")
-
 contentDomUpdate();
-//updateLists();
-//createNewList("Johnny")
 updateTaskList();
 updateListsDOM();
-//populateStorage();
-
-
-
-
-
-console.log(taskLists)
 
 
 
