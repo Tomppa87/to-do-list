@@ -10,6 +10,7 @@ import { taskLists } from "./myTasks";
 //import { removeTask } from "./index";
 import { indexTask } from "./myTasks";
 import { createTask } from "./myTasks";
+import { createNewList } from "./myTasks";
 
 function removeTask(index) {
     taskArray.splice(index,1);    
@@ -72,6 +73,7 @@ export function contentDomUpdate(listFilter) {
             else {
                 continue
             }
+
         let cardBtns = document.createElement("div");
         let editBtn = document.createElement("button"); 
         editBtn.innerHTML = "Edit"
@@ -127,11 +129,13 @@ function dropDownEmpty() {
     }
 }
 
-const dialog = document.getElementById("dialogFormTask")
+const dialog = document.getElementById("dialogFormTask");
+
 add_btn.addEventListener("click", () => {
     dropDownPopulate();
     dialog.showModal();
 })
+
 cancelTaskBtn.addEventListener("click", () => {
     dropDownEmpty();
     dialog.close();
@@ -166,11 +170,20 @@ newTaskBtn.addEventListener("click", (e) => {
 })
 const newList = document.getElementById("newList")
 const dialogList = document.getElementById("dialogFormLists")
-newList.addEventListener("click", () => {
-    
+const cancelListBtn = document.getElementById("cancelListBtn")
+const confirmNewList = document.getElementById("newListBtn")
+newList.addEventListener("click", () => {    
     dialogList.showModal();
 })
-cancelListBtn.addEventListener("click", () => {
-    
+cancelListBtn.addEventListener("click", () => {    
+    console.log("Byr")
+    dialogList.close();
+})
+confirmNewList.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    console.log("hello")
+    let newListTitle = document.getElementById("titleList").value
+    createNewList(newListTitle)   
+    contentDomUpdate()
     dialogList.close();
 })
