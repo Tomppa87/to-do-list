@@ -12,6 +12,7 @@ import { taskLists } from "./myTasks";
 import { indexTask } from "./myTasks";
 import { createNewList } from "./myTasks";
 import { updateTaskList } from "./myTasks";
+import { listFilter } from "./dom";
 
 
 createTask("School", "Finish homework", "09.04.2025", "High", "My Tasks");

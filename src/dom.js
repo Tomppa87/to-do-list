@@ -3,6 +3,7 @@ export const contentHead = document.getElementById("content_Head");
 export const toDoLists = document.getElementById("toDoLists");
 export const add_btn = document.getElementById("add_btn");
 export const cancelTaskBtn = document.getElementById("cancelTaskBtn");
+ 
 
 import { taskArray } from "./myTasks";
 import { taskLists } from "./myTasks";
@@ -10,13 +11,14 @@ import { taskLists } from "./myTasks";
 import { indexTask } from "./myTasks";
 import { createTask } from "./myTasks";
 
-
 function removeTask(index) {
-    taskArray.splice(index,1);
-    contentDomUpdate();
+    taskArray.splice(index,1);    
+    contentDomUpdate(listFilter);
 };
 
-export function contentDomUpdate(filter) {
+let listFilter = ""
+
+export function contentDomUpdate(listFilter) {
     // remove previous view by removing container children
     indexTask();
     while (container.firstChild) {
@@ -26,7 +28,7 @@ export function contentDomUpdate(filter) {
     for (let i = 0; i < taskArray.length; i++) {        
         const task = taskArray[i];
         const taskCard = document.createElement("div")
-        if  (filter === undefined || filter === "My Tasks") {
+        if  (listFilter === undefined || listFilter === "My Tasks") {
             // go through each property in all entries 
                 for (let prop in taskArray[i]) {
                     let taskCardProperty = document.createElement("span");
@@ -47,10 +49,11 @@ export function contentDomUpdate(filter) {
                     }                 
                 }
             }
-        else if (taskArray[i].listName === filter) {
+        else if (taskArray[i].listName === listFilter) {
         // go through each property in filtered entry 
             for (let prop in taskArray[i]) {
                 let taskCardProperty = document.createElement("span");
+                taskCardProperty.classList.add(prop)
                 if (prop === "dueDate") {
                     let taskCardText = document.createTextNode("Due date: "+taskArray[i][prop])
                     taskCardProperty.appendChild(taskCardText)
@@ -104,7 +107,8 @@ export function updateListsDOM() {
     }
 }
 toDoLists.addEventListener("click", function(e) {
-    contentDomUpdate(e.target.innerHTML)
+    listFilter = e.target.innerHTML
+    contentDomUpdate(listFilter)
 })
 
 let select = document.getElementById("to_do_list")
