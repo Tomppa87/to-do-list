@@ -183,7 +183,9 @@ confirmNewList.addEventListener("click", (e) => {
     e.preventDefault(); 
     console.log("hello")
     let newListTitle = document.getElementById("titleList").value
-    createNewList(newListTitle)   
+    createNewList(newListTitle)  
+    console.log(taskLists) 
     contentDomUpdate()
+    updateListsDOM();
     dialogList.close();
 })

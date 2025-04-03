@@ -50,7 +50,7 @@ ul>* {
     padding: 15px;
     border-radius: 10px;
 }
-.newList{
+/*.newList{
     background-color: white;
     border: 0;
     font-family: 'Alkatra';
@@ -58,7 +58,7 @@ ul>* {
     display: flex;
     justify-content: center;
     align-items:baseline;
-}
+}*/
 .newListBtn{
     height: 1rem;
     padding-left: 10px;
@@ -87,7 +87,7 @@ ul>* {
 .taskListOption:hover {
     background-color: beige;
 }
-#newListForm {
+/*#newListForm {
     display: flex;
     flex-direction: column;
-}
+}*/
