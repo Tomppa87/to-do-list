@@ -13,7 +13,10 @@ import { indexTask } from "./myTasks";
 import { createNewList } from "./myTasks";
 import { updateTaskList } from "./myTasks";
 import { listFilter } from "./dom";
+import { populateStorage } from "./myTasks"
+import { getFromStorage } from "./myTasks"
 
+getFromStorage()
 
 createTask("School", "Finish homework", "09.04.2025", "High", "My Tasks");
 createTask("Moon", "Moon", "tomorrow", "low", "My Favourite Movies");
@@ -25,6 +28,11 @@ contentDomUpdate();
 //createNewList("Johnny")
 updateTaskList();
 updateListsDOM();
+//populateStorage();
+
+
+
+
 
 console.log(taskLists)
 

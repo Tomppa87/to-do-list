@@ -11,9 +11,11 @@ import { taskLists } from "./myTasks";
 import { indexTask } from "./myTasks";
 import { createTask } from "./myTasks";
 import { createNewList } from "./myTasks";
+import { populateStorage } from "./myTasks"
 
 function removeTask(index) {
-    taskArray.splice(index,1);    
+    taskArray.splice(index,1);  
+    populateStorage();  
     contentDomUpdate(listFilter);
 };
 
